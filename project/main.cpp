@@ -7,11 +7,13 @@ using namespace sc2;
 class Bot : public Agent {
 public:
     virtual void OnGameStart() final {
-        std::cout << "Hello, World!" << std::endl;
+        std::cout << "Game Started!" << std::endl;
     }
 
     virtual void OnStep() final {
-        std::cout << Observation()->GetGameLoop() << std::endl;
+        std::cout << "Current loop: " << Observation()->GetGameLoop() << std::endl;
+		std::cout << "Current Minerals: " << Observation()->GetMinerals() << std::endl;
+		std::cout << "Current Gas: " << Observation()->GetVespene() << std::endl;
     }
 };
 
